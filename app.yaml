@@ -1,0 +1,12 @@
+runtime: python39
+
+handlers:
+# Handle the root directory and serve index.html
+- url: /
+  static_files: www/index.html
+  upload: www/index.html
+
+# Handle all other static assets (CSS, JS, Images, or other HTML files)
+- url: /(.*)
+  static_files: www/\1
+  upload: www/(.*)
